@@ -1,0 +1,9 @@
+captive_portal:
+
+logger: !include logger.yaml
+api:
+ota:
+  platform: esphome
+
+web_server:
+  port: 80

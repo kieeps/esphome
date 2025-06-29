@@ -1,0 +1,16 @@
+esphome:
+  name: ${devicename}
+  includes:
+    - custom_components/sonoff_l1.h
+
+esp8266:
+  board: esp8285
+
+light:
+  - platform: custom
+    lambda: |-
+      auto light_out = new SonoffL1();
+      App.register_component(light_out);
+      return {light_out};
+    lights:
+      - name: "${friendly_name}"
